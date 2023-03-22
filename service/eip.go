@@ -81,6 +81,9 @@ type AllocateEIPsInput struct {
 	EIPName     *string `json:"eip_name" name:"eip_name" location:"params"`
 	// NeedICP's available values: 0, 1
 	NeedICP *int `json:"need_icp" name:"need_icp" default:"0" location:"params"`
+	//"eip_group":"eipg-00000000","eip_group_name":"BGP 优化线路"
+	//"eip_group":"eipg-00000001","eip_group_name":"BGP 多线" 选这个，上面那个无法访问外网
+	EipGroup *string `json:"eip_group" name:"eip_group" default:"eipg-00000001" location:"params"`
 }
 
 func (v *AllocateEIPsInput) Validate() error {
